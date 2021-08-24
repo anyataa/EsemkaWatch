@@ -1,47 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14256" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="18122" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14243"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14219"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="18022"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="220" y="345"/>
-        </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
-            <objects>
-                <notificationController id="YCC-NB-fut">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="EsemkaWatch_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                        <label width="136" height="122" alignment="left" text="SiCara akan berfungsi optimal jika pengaturan “Saat Tangan Diangkat” dinyalakan dan diatur ke Selalu." textAlignment="center" numberOfLines="0" id="KT9-9B-l9w">
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                        </label>
+                        <button width="1" alignment="left" title="Selanjutnya" id="lD5-N1-wX9">
+                            <connections>
+                                <segue destination="Ail-MN-dfR" kind="modal" id="Vim-ea-9df"/>
+                            </connections>
+                        </button>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
-                    <connections>
-                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
-                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
-                    </connections>
-                </notificationController>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="219.52173913043478" y="351.38392857142856"/>
         </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
+        <!--Interface Controller-->
+        <scene sceneID="Y9J-AZ-Olm">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="k1p-rN-j3D">
+                    <items>
+                        <label width="136" alignment="left" text="Pertanyaan x dari y" numberOfLines="0" id="PPO-qD-zpk"/>
+                        <button width="136" height="99" alignment="left" backgroundImage="forward.fill" catalog="system" id="c23-6m-9zb">
+                            <color key="backgroundColor" red="0.32369041440000001" green="0.44522786139999998" blue="0.52942401169999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </button>
+                    </items>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="96" y="1017"/>
         </scene>
-        <!--Notification Controller-->
-        <scene sceneID="Niz-AI-uX2">
+        <!--Interface Controller-->
+        <scene sceneID="jPK-45-XRa">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="Ail-MN-dfR">
+                    <items>
+                        <label width="136" height="36" alignment="left" text="Hampir Siap" textAlignment="center" id="6yZ-jo-MSo">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                        </label>
+                        <label width="136" height="63" alignment="left" text="Buka Aplikasi SiCara pada iPhone Anda" textAlignment="center" numberOfLines="0" id="6WF-te-lXH"/>
+                        <button width="1" alignment="left" title="Detect" id="nP8-Ah-E7D">
+                            <connections>
+                                <segue destination="mZs-Q5-j45" kind="modal" id="mci-Pf-o3G"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="467" y="351"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="WS3-JX-Vqh">
+            <objects>
+                <controller id="mZs-Q5-j45">
+                    <items>
+                        <label width="136" height="31" alignment="left" text="Mulai Simulasi" id="fbU-A2-9pt">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                        <button width="136" height="133" alignment="left" backgroundImage="video.badge.plus.fill" catalog="system" id="7mF-eW-2Wb">
+                            <color key="backgroundColor" red="0.62933284040000004" green="0.75108897689999998" blue="0.83922916650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="k1p-rN-j3D" kind="modal" id="epg-8r-N4c"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="369.56521739130432" y="674.6875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="forward.fill" catalog="system" width="128" height="77"/>
+        <image name="video.badge.plus.fill" catalog="system" width="128" height="91"/>
+    </resources>
 </document>
